@@ -8,10 +8,9 @@
 
 int main(void)
 {
-char text = 'Size of a';
-printf("%c", text" char: "sizeof(char));
-printf("%c", text" int: "sizeof(int));
-printf("%c", text" long int: "sizeof(long int));
-printf("%c", text" long long int: "sizeof(long long int));
-printf("%c", text" float: "sizeof(float));
+printf("Size of a char: %lu byte(s)\n", sizeof(char));
+printf("Size of an int: %lu byte(s)\n", sizeof(int));
+printf("Size of a long int: %lu byte(s)\n", sizeof(long int));
+printf("Size of a long long int: %lu byte(s)\n", sizeof(long long int));
+printf("Size of a float: %lu byte(s)\n", sizeof(float));
 }
