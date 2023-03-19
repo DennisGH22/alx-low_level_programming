@@ -12,11 +12,11 @@ int i;
 
 for (i = 0; i < 10; i++)
 {
-putchar('0' + i%10);
+putchar('0' + i % 10);
 
 if (i == 9)
 {
-    break;
+break;
 }
 
 putchar(',');
