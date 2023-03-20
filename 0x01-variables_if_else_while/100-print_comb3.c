@@ -18,7 +18,7 @@ putchar('0' + i % 10);
 putchar('0' + j % 10);
 if (i == 8)
 {
-    break;
+break;
 }
 putchar(',');
 putchar(' ');
@@ -26,5 +26,5 @@ putchar(' ');
 }
 putchar('\n');
 
-return (0);  
+return (0);
 }
