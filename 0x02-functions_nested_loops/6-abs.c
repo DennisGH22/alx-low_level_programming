@@ -3,9 +3,14 @@
 
 /**
  * _abs - Computes the absolute value of an integer.
+ * @v: The value computed.
+ * 
+ * Return: The value computed.
 */
 
-int _abs(int value)
+int _abs(int v)
 {
-abs(value);
+abs(v);
+
+return (v);
 }
