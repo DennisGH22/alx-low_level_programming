@@ -8,12 +8,12 @@
  * Return: The value computed.
 */
 
-int _abs(int v)
+int _abs(int value)
 {
-if (v < 0)
+if (value < 0)
 {
-    v *= -1;
+value *= -1;
 }
 
-return (v);
+return (value);
 }
