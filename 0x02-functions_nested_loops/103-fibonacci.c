@@ -18,6 +18,7 @@ if (k % 2 == 0)
 {
 sum += k;
 }
+sum = k;
 j = k - j;
 }
 printf("%ld\n", sum);
