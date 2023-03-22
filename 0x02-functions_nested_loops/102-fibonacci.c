@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
-  * main - Prints the first 50 fibonacci numbers.
-  *
-  * Return: Always 0 (Success).
-  */
+ * main - Prints the first 50 fibonacci numbers.
+ *
+ * Return: Always 0 (Success).
+*/
+
 int main(void)
 {
 int i;
