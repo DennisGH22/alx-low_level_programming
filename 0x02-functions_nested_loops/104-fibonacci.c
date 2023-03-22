@@ -11,7 +11,7 @@ int main(void)
 int i;
 long j = 1, k = 2;
 
-for (i = 0; i < 98; i++)
+for (i = 0; i <= 98; i++)
 {
 if (i == 0)
 {
