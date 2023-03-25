@@ -12,13 +12,16 @@ int main(void)
 	long num = 612852475143;
 	long largestPrime;
 
-	for (i = 2; i <= num; i++) {
-		while (num % i == 0) {
+	for (i = 2; i <= num; i++) 
+	{
+		while (num % i == 0)
+		{
 			largestPrime = i;
 			num /= i;
 		}
 	}
-	printf("%ld\n", largestPrime);
 
+	printf("%ld\n", largestPrime);
+	
 	return (0);
 }
