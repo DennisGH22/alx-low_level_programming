@@ -3,7 +3,7 @@
 /**
  * main - The Fizz-Buzz test.
  *
- * Return: Always 0 (Success);
+ * Return: Always 0 (Success).
 */
 
 int main()
@@ -29,10 +29,10 @@ int main()
 			printf("FizzBuzz ");
 			continue;
 		}
-		
+
 		printf("%d", i);
 		printf(" ");
 	}
-	
+
 	return (0);
 }
