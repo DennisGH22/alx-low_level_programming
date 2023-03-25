@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long long i;
-	long long num = 612852475143;
-	long long largestPrime;
+	long i;
+	long num = 612852475143;
+	long largestPrime;
 
 	for (i = 2; i <= num; i++) {
 		while (num % i == 0) {
@@ -19,6 +19,6 @@ int main(void)
 		}
 	}
 
-	printf("%lld\n", largestPrime);
+	printf("%ld\n", largestPrime);
 	return (0);
 }
