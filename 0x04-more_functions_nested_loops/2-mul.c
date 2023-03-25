@@ -5,12 +5,12 @@
  * @a: Parameter multiplied.
  * @b: Parameter multiplied.
  *
- * Return: Always 0 (Success).
+ * Return: Results.
 */
 
 int mul(int a, int b)
 {
-	a * b;
+	int res = a * b;
 
-	return (0);
+	return (res);
 }
