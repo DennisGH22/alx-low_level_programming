@@ -21,6 +21,5 @@ int main(void)
 		}
 	}
 	printf("%ld\n", largestPrime);
-
 	return (0);
 }
