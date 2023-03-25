@@ -6,7 +6,7 @@
  * Return: Always 0 (Success).
 */
 
-int main()
+int main(void)
 {
 	int i;
 
@@ -28,7 +28,7 @@ int main()
 			}
 			else
 			{
-			printf("Buzz ");
+				printf("Buzz ");
 			}
 		}
 		else
