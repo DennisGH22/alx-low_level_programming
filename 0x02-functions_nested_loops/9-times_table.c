@@ -18,11 +18,18 @@ void times_table(void)
 			{
 				_putchar('0' + k / 10);
 			}
+			else
+			{
+				_putchar(' ');
+			}
+
 			_putchar('0' + k % 10);
+
 			if (k == 81)
 			{
 				break;
 			}
+			
 			_putchar(',');
 			_putchar(' ');
 		}
