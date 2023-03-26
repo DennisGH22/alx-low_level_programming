@@ -8,26 +8,43 @@
 
 int main(void)
 {
-int i;
-long j = 1, k = 2;
+	int i;
+	unsigned long j = 0, k = 1, sum,
+	l, m, n, o, p, q;
 
-for (i = 0; i <= 98; i++)
-{
-if (i == 0)
-{
-printf("%ld", j);
-}
-else if (i == 1)
-{
-printf(", %ld", k);
-}
-else
-{
-k += j;
-j = k - j;
-printf(", %ld", k);
-}
-}
+	for (i = 0; i < 92; i++)
+	{
+		sum = j + k;
+		printf("%lu, ", sum);
+
+		j = k;
+		k = sum;
+	}
+
+	l = j / 10000000000;
+	n = k / 10000000000;
+	m = j % 10000000000;
+	o = k % 10000000000;
+
+	for (i = 93; i < 99; i++)
+	{
+		p = l + n;
+		q = m + o;
+		if (m + o > 9999999999)
+		{
+			p += 1;
+			q %= 10000000000;
+		}
+
+		printf("%lu%lu", j, k);
+		if (i != 98)
+			printf(", ");
+
+		l = n;
+		m = o;
+		n = p;
+		o = q;
+	}
 printf("\n");
 
 return (0);
