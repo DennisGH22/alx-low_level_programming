@@ -8,44 +8,45 @@
 
 int main(void)
 {
-	int i;
-	unsigned long j = 0, k = 1, sum,
-	l, m, n, o, p, q;
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
+	unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
+	unsigned long half1, half2;
 
-	for (i = 0; i < 92; i++)
+	for (count = 0; count < 92; count++)
 	{
-		sum = j + k;
+		sum = fib1 + fib2;
 		printf("%lu, ", sum);
 
-		j = k;
-		k = sum;
+		fib1 = fib2;
+		fib2 = sum;
 	}
 
-	l = j / 10000000000;
-	n = k / 10000000000;
-	m = j % 10000000000;
-	o = k % 10000000000;
+	fib1_half1 = fib1 / 10000000000;
+	fib2_half1 = fib2 / 10000000000;
+	fib1_half2 = fib1 % 10000000000;
+	fib2_half2 = fib2 % 10000000000;
 
-	for (i = 93; i < 99; i++)
+	for (count = 93; count < 99; count++)
 	{
-		p = l + n;
-		q = m + o;
-		if (m + o > 9999999999)
+		half1 = fib1_half1 + fib2_half1;
+		half2 = fib1_half2 + fib2_half2;
+		if (fib1_half2 + fib2_half2 > 9999999999)
 		{
-			p += 1;
-			q %= 10000000000;
+			half1 += 1;
+			half2 %= 10000000000;
 		}
 
-		printf("%lu%lu", j, k);
-		if (i != 98)
+		printf("%lu%lu", half1, half2);
+		if (count != 98)
 			printf(", ");
 
-		l = n;
-		m = o;
-		n = p;
-		o = q;
+		fib1_half1 = fib2_half1;
+		fib1_half2 = fib2_half2;
+		fib2_half1 = half1;
+		fib2_half2 = half2;
 	}
-printf("\n");
+	printf("\n");
 
-return (0);
+	return (0);
 }
