@@ -12,6 +12,7 @@ int main(void)
 	unsigned long j = 0, k = 1, sum;
 	unsigned long l, m, n, o;
 	unsigned long p, q;
+
 	for (i = 0; i < 92; i++)
 	{
 		sum = j + k;
