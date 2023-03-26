@@ -25,11 +25,11 @@ void times_table(void)
 
 			_putchar('0' + k % 10);
 
-			if (k == 81)
+			if (k == i * 9)
 			{
 				break;
 			}
-			
+
 			_putchar(',');
 			_putchar(' ');
 		}
