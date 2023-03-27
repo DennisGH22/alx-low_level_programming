@@ -7,11 +7,11 @@
 
 void puts2(char *str)
 {
-	int i, j;
+	int i = 0, j;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-
+		i++;
 	}
 	
 	for (j = 0; j < i; j += 2)
