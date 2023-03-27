@@ -3,17 +3,17 @@
 #include "main.h"
 
 /**
- * rev_string - Reverses a string.
- * @s: The reversed string.
+ * rev_sing - Reverses a sing.
+ * @s: The reversed sing.
 */
 
-void rev_string(char *s)
+void rev_sing(char *s)
 {
-	int i;
-	size_t length = strlen(s);
-
-	for (i = length - 1; i >= 0; i--)
-	{
-		s[i];
-	}
+	int i, length = strlen(s);
+    
+    for (i = 0; i < length / 2; i++) {
+        char temp = s[i];
+        s[i] = s[length-i-1];
+        s[length-i-1] = temp;
+    }
 }
