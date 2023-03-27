@@ -11,12 +11,19 @@
 
 int main()
 {
-	srand(time(NULL));
-    int random_number = rand() % 2;
-    if (random_number == 0)
+	int r = 0, c = 0;
+	time_t t;
+
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-        printf("Tada! Congrats\n");
+		r = rand() % 128;
+		if ((c + r) > 2772)
+			break;
+		c = c + r;
+		printf("%c", r);
 	}
+	printf("%c\n", (2772 - c));
 	
 	return (0);
 }
