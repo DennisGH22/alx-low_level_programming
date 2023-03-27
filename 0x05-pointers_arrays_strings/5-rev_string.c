@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
- * rev_sing - Reverses a sing.
+ * rev_string - Reverses a sing.
  * @s: The reversed sing.
 */
 
-void rev_sing(char *s)
+void rev_string(char *s)
 {
 	int i, length = strlen(s);
     
