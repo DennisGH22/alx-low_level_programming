@@ -9,11 +9,16 @@
 
 void print_array(int *a, int n)
 {
-	size_t i, len = sizeof(n) / sizeof(a);
+	int i;
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i < n; i++)
 	{
-		printf("%d ", a[i]);
+		printf("%d", *(a + i));
+
+		if (i != (n - 1))
+		{
+			printf(", ");
+		}
 	}
 	printf("\n");
 }
