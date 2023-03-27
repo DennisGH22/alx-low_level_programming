@@ -6,5 +6,5 @@
 
 void reset_to_98(int *n)
 {
-	printf("%d", *n);
+	_putchar('0' + *n);
 }
