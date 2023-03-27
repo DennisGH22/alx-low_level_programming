@@ -9,5 +9,11 @@
 
 void rev_string(char *s)
 {
-	strrev(s);
+	int i;
+	size_t length = strlen(s);
+
+	for (i = length - 1; i >= 0; i--)
+	{
+		s[i];
+	}
 }
