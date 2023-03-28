@@ -11,7 +11,9 @@ void puts2(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		// Do nothing...
+		/**
+		 * Do nothing...
+		*/
 	}
 
 	for (j = 0; j < i; j += 2)
