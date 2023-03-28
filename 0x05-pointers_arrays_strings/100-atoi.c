@@ -3,6 +3,8 @@
 /**
  * _atoi - Converts a string to an integer.
  * @s: The string to convert.
+ *
+ * Return: 0 if no numbers.
 */
 
 int _atoi(char *s)
