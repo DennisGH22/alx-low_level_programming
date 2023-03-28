@@ -18,6 +18,7 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0' && s[i] >= '0' && s[i] <= '9'; ++i) {
 		int current_digit = s[i] - '0';
+
 		if (negative_count % 2)
 		{
 			current_digit = -current_digit;
