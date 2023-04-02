@@ -10,7 +10,7 @@
 char *cap_string(char *str)
 {
 	int i;
-	
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (i == 0 || str[i - 1] == ' ')
@@ -27,7 +27,7 @@ char *cap_string(char *str)
 				str[i] = str[i] - 'A' + 'a';
 			}
 		}
-    }
+	}
 
 	return (str);
 }
