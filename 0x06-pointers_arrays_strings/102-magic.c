@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - Prints the value of a[2].
- *
- * Return: Always 0 (Success).
-*/
-
 int main(void)
 {
 	int n;
