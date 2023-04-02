@@ -2,37 +2,37 @@
 
 /**
  * leet - Encode a string into 1337.
- * @str: The encoded string.
+ * @s: The encoded string.
  *
  * Return: str
 */
 
-char *leet(char *str)
+char *leet(char *s)
 {
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		switch (*str)
+		switch (*s)
 		{
 			case 'a':
-				*str = '4';
+				*s = '4';
 				break;
 			case 'e':
-				*str = '3';
+				*s = '3';
 				break;
 			case 'l':
-				*str = '1';
+				*s = '1';
 				break;
 			case 'o':
-				*str = '0';
+				*s = '0';
 				break;
 			case 't':
-				*str = '7';
+				*s = '7';
 				break;
 			default:
 				break;
 		}
-		str++;
+		s++;
 	}
 
-	return (str);
+	return (s);
 }
