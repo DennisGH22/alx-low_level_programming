@@ -1,4 +1,3 @@
-#include <string.h>
 #include "main.h"
 
 /**
@@ -10,21 +9,30 @@
 
 char *leet(char *str)
 {
-	int i, j;
-	char leet_chars[] = {'O', 'I', 'Z', 'E', 'A', 'S', 'G', 'T', 'B', 'q', 'j', 'l', 'p'};
-	char leet_nums[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'j', 'l', 'p'};
-
-	for (i = 0; i < strlen(str); i++)
+	while (*str != '\0')
 	{
-		for (j = 0; j < 14; j++)
+        switch (*str)
 		{
-			if (str[i] == leet_chars[j])
-			{
-				str[i] = leet_nums[j];
-				break;
-			}
-		}
-	}
+            case 'a':
+                *str = '4';
+                break;
+            case 'e':
+                *str = '3';
+                break;
+            case 'l':
+                *str = '1';
+                break;
+            case 'o':
+                *str = '0';
+                break;
+            case 't':
+                *str = '7';
+                break;
+            default:
+                break;
+        }
+        str++;
+    }
 
 	return (str);
 }
