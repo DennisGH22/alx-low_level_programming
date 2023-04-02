@@ -10,21 +10,20 @@
 
 char *leet(char *s)
 {
-	int i, j;
-    char leet_chars[] = {'O', 'I', 'Z', 'E', 'A', 'S', 'G', 'T', 'B', 'q', 'j', 'l', 'p'};
-    char leet_nums[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'j', 'l', 'p'};
+	char *r = s;
+	char a[] = { 'a', 'e', 'o', 't', 'l' };
+	char n[] = { 4, 3, 0, 7, 1 };
+	int i = 0;
 
-    for (i = 0; i < strlen(s); i++)
+	while (*s)
 	{
-        for (j = 0; j < 14; j++)
+		for (i = 0; i < 5; i++)
 		{
-            if (s[i] == leet_chars[j])
-			{
-                s[i] = leet_nums[j];
-                break;
-            }
-        }
-    }
+			if (*s == a[i] || *s == a[i] - 32)
+				*s = n[i] + '0';
+		}
+		s++;
+	}
 
-	return (s);
+	return (r);
 }
