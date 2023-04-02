@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_buffer - Prints a buffer.
@@ -13,22 +12,22 @@ void print_buffer(char *b, int size)
 
 	for (i = 0; i < size; i += 10)
 	{
-		printf("%08x: ", i);
+		_putchar('0' + i);
 
 		for (j = 0; j < 10; j++)
 		{
 			if ((j + i) >= size)
 			{
-				printf("  ");
+				_putchar('  ');
 			}
 			else
 			{
-				printf("%02x", *(b + j + i))
+				_putchar('0' + *(b + j + i))
 			}
 
 			if ((j % 2) != 0 && j != 0)
 			{
-				printf(" ");
+				_putchar(' ');
 			}
 		}
 
@@ -40,11 +39,11 @@ void print_buffer(char *b, int size)
 			}
 			else if (*(b + j + i) >= 31 && *(b + j + i) <= 126)
 			{
-				printf("%c", *(b + j + i));
+				_putchar('0' + *(b + j + i));
 			}
 			else
 			{
-				printf(".");
+				_putchar('.');
 			}
 		}
 
@@ -52,10 +51,10 @@ void print_buffer(char *b, int size)
 		{
 			continue;
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 	if (size <= 0)
 	{
-		printf("\n");
+		_putchar('\n');
 	}
 }
