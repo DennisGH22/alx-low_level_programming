@@ -12,19 +12,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, j;
 
-	for (i = 0; *(n1 + i); i++)
-	{
-		/**
-		 * Do Nothing...
-		*/
-	}
+	for (i = 0; *(n1 + i); i++);
 
-	for (j = 0; *(n2 + j); j++)
-	{
-		/**
-		 * Do Nothing...
-		*/
-	}
+	for (j = 0; *(n2 + j); j++);
 
 	printf("%d, %d\n", i, j);
 
