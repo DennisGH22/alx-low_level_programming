@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - Prints the value of a[2].
+ *
+ * Return: Always 0 (Success).
+*/
+
 int main(void)
 {
 	int n;
@@ -19,5 +25,6 @@ int main(void)
 	*(a + 2) = 98;
 	/* ...so that this prints 98\n */
 	printf("a[2] = %d\n", a[2]);
+
 	return (0);
 }
