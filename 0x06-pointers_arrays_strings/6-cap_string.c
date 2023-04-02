@@ -1,35 +1,33 @@
+#include <ctype.h>
 #include "main.h"
 
 /**
  * cap_string - Capitalize all words of a string.
- * @str: The capitalized string.
  *
  * Return: str
 */
 
-char *cap_string(char *str)
+char *cap_string(char *)
 {
 	int i;
-	int len = strlen(str);
+	int len = strlen();
 	int capitalize_next = 1;
 
 	for (i = 0; i < len; i++)
 	{
-		if (isspace(str[i]))
+		if (isspace(i))
 		{
 			capitalize_next = 1;
 		}
 		else if (capitalize_next)
 		{
-			str[i] = toupper(str[i]);
+			i = toupper(i);
 			capitalize_next = 0;
 		}
 		else
 		{
-			str[i] = tolower(str[i]);
+			i = tolower(i);
 		}
 		
 	}
-
-	return (str);
 }
