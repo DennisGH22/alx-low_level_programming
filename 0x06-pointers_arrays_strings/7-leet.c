@@ -3,16 +3,16 @@
 
 /**
  * leet - Encode a string into 1337.
- * @s: The encoded string.
+ * @str: The encoded string.
  *
- * Return: s
+ * Return: str
 */
 
 char *leet(char *str)
 {
 	int i;
 
-for (i = 0; i < strlen(str); i++)
+	for (i = 0; i < strlen(str); i++)
 	{
 		switch (str[i])
 		{
@@ -48,4 +48,6 @@ for (i = 0; i < strlen(str); i++)
 				break;
 		}
 	}
+
+	return (str);
 }
