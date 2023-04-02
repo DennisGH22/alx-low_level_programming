@@ -4,34 +4,48 @@
  * leet - Encode a string into 1337.
  * @s: The encoded string.
  *
- * Return: str
+ * Return: s
 */
 
 char *leet(char *s)
 {
-	while (*s != '\0')
+	int i;
+
+	for (i = 0; i < strlen(s); i++)
 	{
-		switch (*s)
+		switch (s[i])
 		{
+			case 'A':
 			case 'a':
-				*s = '4';
+				s[i] = '4';
 				break;
+			case 'E':
 			case 'e':
-				*s = '3';
+				s[i] = '3';
 				break;
-			case 'l':
-				*s = '1';
+			case 'G':
+			case 'g':
+				s[i] = '6';
 				break;
+			case 'I':
+			case 'i':
+				s[i] = '1';
+				break;
+			case 'O':
 			case 'o':
-				*s = '0';
+				s[i] = '0';
 				break;
+			case 'S':
+			case 's':
+				s[i] = '5';
+				break;
+			case 'T':
 			case 't':
-				*s = '7';
+				s[i] = '7';
 				break;
 			default:
 				break;
 		}
-		s++;
 	}
 
 	return (s);
