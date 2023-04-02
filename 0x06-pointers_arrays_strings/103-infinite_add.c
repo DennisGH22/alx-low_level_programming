@@ -10,19 +10,13 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j;
-
-	for (i = 0; *(n1 + i); i++)
-	{
-		/* Do nothing... */
-	}
-
-	for (j = 0; *(n2 + j); j++)
-	{
-		/* Do nothing... */
-	}
-
-	printf("%d, %d\n", i, j);
+	int len1 = 0, len2 = 0, lenS = 0;
+	
+	while (*(n1 + len1++))
+		;
+	while (*(n2 + len2++))
+		;
+	printf("%d, %d\n", len1, len2);
 
 	return (r);
 }
