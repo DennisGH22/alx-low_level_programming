@@ -10,11 +10,12 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j;
+	int i = 0, j = 0;
 
-	for (i = 0; *(n1 + i) != '\0'; i++);
-
-	for (j = 0; *(n2 + j) != '\0'; j++);
+	while (*(n1 + i++))
+		;
+	while (*(n2 + j++))
+		;
 
 	printf("%d, %d\n", i, j);
 
