@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -13,16 +10,18 @@
 char *cap_string(char *str)
 {
 	int i;
-	int len = strlen(str);
-
-	if (isalpha(str[0]))
-		str[0] = toupper(str[0]);
-
-	for (i = 1; i < len; i++)
-	{
-		if (isspace(str[i - 1]) && isalpha(str[i]))
-			str[i] = toupper(str[i]);
-	}
+    for (i = 0; str[i] != '\0'; i++) {
+        if (i == 0 || str[i - 1] == ' ') {
+            if (str[i] >= 'a' && str[i] <= 'z') {
+                str[i] = str[i] - 'a' + 'A';
+            }
+        }
+        else {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                str[i] = str[i] - 'A' + 'a';
+            }
+        }
+    }
 
 	return (str);
 }
