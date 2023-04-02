@@ -11,42 +11,19 @@
 
 char *leet(char *str)
 {
-	int i;
+	int i, j;
+	char leet_chars[] = {'O', 'I', 'Z', 'E', 'A', 'S', 'G', 'T', 'B', 'q', 'j', 'l', 'p'};
+	char leet_nums[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'j', 'l', 'p'};
 
 	for (i = 0; i < strlen(str); i++)
 	{
-		switch (str[i])
+		for (j = 0; j < 14; j++)
 		{
-			case 'A':
-			case 'a':
-				str[i] = '4';
+			if (str[i] == leet_chars[j])
+			{
+				str[i] = leet_nums[j];
 				break;
-			case 'E':
-			case 'e':
-				str[i] = '3';
-				break;
-			case 'G':
-			case 'g':
-				str[i] = '6';
-				break;
-			case 'I':
-			case 'i':
-				str[i] = '1';
-				break;
-			case 'O':
-			case 'o':
-				str[i] = '0';
-				break;
-			case 'S':
-			case 's':
-				str[i] = '5';
-				break;
-			case 'T':
-			case 't':
-				str[i] = '7';
-				break;
-			default:
-				break;
+			}
 		}
 	}
 
