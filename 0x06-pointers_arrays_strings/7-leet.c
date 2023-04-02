@@ -11,28 +11,28 @@ char *leet(char *str)
 {
 	while (*str != '\0')
 	{
-        switch (*str)
+		switch (*str)
 		{
-            case 'a':
-                *str = '4';
-                break;
-            case 'e':
-                *str = '3';
-                break;
-            case 'l':
-                *str = '1';
-                break;
-            case 'o':
-                *str = '0';
-                break;
-            case 't':
-                *str = '7';
-                break;
-            default:
-                break;
-        }
-        str++;
-    }
+			case 'a':
+				*str = '4';
+				break;
+			case 'e':
+				*str = '3';
+				break;
+			case 'l':
+				*str = '1';
+				break;
+			case 'o':
+				*str = '0';
+				break;
+			case 't':
+				*str = '7';
+				break;
+			default:
+				break;
+		}
+		str++;
+	}
 
 	return (str);
 }
