@@ -14,7 +14,6 @@ void print_number(int n)
 		{
 			print_number(n / -10);
 		}
-		n = -n;
 	}
 
 	if (n >= 10)
