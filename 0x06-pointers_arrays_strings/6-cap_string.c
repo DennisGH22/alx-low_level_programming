@@ -30,7 +30,6 @@ char *cap_string(char *str)
 		{
 			str[i] = tolower(str[i]);
 		}
-		
 	}
 
 	return (str);
