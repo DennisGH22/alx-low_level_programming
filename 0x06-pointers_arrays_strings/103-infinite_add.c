@@ -12,9 +12,15 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, j;
 
-	for (i = 0; *(n1 + i) != '\0'; i++);
+	for (i = 0; *(n1 + i) != '\0'; i++)
+	{
+		/* Do nothing... */
+	}
 
-	for (j = 0; *(n2 + j) != '\0'; j++);
+	for (j = 0; *(n2 + j) != '\0'; j++)
+	{
+		/* Do nothing... */
+	}
 
 	printf("%d, %d\n", i, j);
 
