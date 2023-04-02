@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 /**
- * infinite_add - add two string numbers.
- * @n: numbers added.
- * @r: buffer to store the sum.
- * @size_r: size of buffer.
+ * infinite_add - Add two string numbers.
+ * @n: Numbers added.
+ * @r: Buffer to store the sum.
+ * @size_r: Size of buffer.
  * 
  * return: r.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = 0, len2 = 0, lenS = 0;
+	int i, j;
 	
-	while (*(n1 + len1++))
+	for (i = 0; *(n1 + i) != '\0'; i++)
 		;
-	while (*(n2 + len2++))
+	for (j = 0; *(n2 + j) != '\0'; j++)
 		;
-	printf("%d, %d\n", len1, len2);
+	printf("%d, %d\n", i, j);
 
 	return (r);
 }
