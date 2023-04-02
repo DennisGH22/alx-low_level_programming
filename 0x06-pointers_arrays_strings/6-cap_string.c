@@ -13,16 +13,16 @@
 char *cap_string(char *str)
 {
 	int i;
-    int len = strlen(str);
+	int len = strlen(str);
 
-    if (isalpha(str[0]))
-        str[0] = toupper(str[0]);
+	if (isalpha(str[0]))
+		str[0] = toupper(str[0]);
 
-    for (i = 1; i < len; i++)
+	for (i = 1; i < len; i++)
 	{
-        if (isspace(str[i - 1]) && isalpha(str[i]))
-            str[i] = toupper(str[i]);
-    }
+		if (isspace(str[i - 1]) && isalpha(str[i]))
+			str[i] = toupper(str[i]);
+	}
 
 	return (str);
 }
