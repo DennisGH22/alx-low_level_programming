@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * is_prime_number - Checks if num is prime.
+ * checker - Checks if num is prime.
  * @n: The num checked.
  * @i: The iterator.
  *
@@ -15,8 +15,8 @@ int checker(int n, int i)
 
 	if (n % i == 0)
 		return (0);
-	
-	return checker(n, i + 1);
+
+	return (checker(n, i + 1));
 }
 
 /**
@@ -28,5 +28,7 @@ int checker(int n, int i)
 
 int is_prime_number(int n)
 {
+	if (n <= 1)
+		return (0);
 	return (checker(n, 2));
 }
