@@ -17,7 +17,7 @@ int find_root(int n, int i)
 	if (square == n && n / i == i)
 	{
 		if (err)
-			return(-1);
+			return (-1);
 		return (i);
 	}
 	return (find_root(n, i + 1));
