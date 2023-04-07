@@ -10,15 +10,13 @@
 int factorial(int n)
 {
 	int err = (n < 0),
-	one = (n >= 0 ==1),
-	fac = (n * factorial(n - 1));
+	factOne = (n <= 1);
 
-	if (one)
+	if (factOne)
+	{
+		if (err)
+			return (-1);
 		return (1);
-
-	if (fac)
-		return (n * factorial(n - 1));
-
-	if (err)
-		return (-1);
+	}
+	return (n * factorial(n - 1));
 }
