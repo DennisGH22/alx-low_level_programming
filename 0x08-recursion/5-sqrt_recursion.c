@@ -1,4 +1,3 @@
-#include <math.h>
 #include "main.h"
 
 /**
@@ -12,8 +11,8 @@
 
 int find_root(int n, int i)
 {
-	int err = (n > sqrt(n)),
-	square = i * i;
+	int square = i * i,
+	err = (square > n);
 
 	if (square == n && n / i == i)
 	{
