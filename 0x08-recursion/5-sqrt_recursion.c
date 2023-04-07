@@ -2,11 +2,11 @@
 
 /**
  * _sqrt_recursion - Calculates the natural sqrt of n.
- * find_root - Compare index with the sqrt num.
+ * find_root - Compare index with the sqrt of num.
  * @n: The base num.
  * @i: The index num.
  *
- * Return: -1 if !natural sqr root otherwise the sqrt.
+ * Return: The root of index and num.
 */
 
 int find_root(int n, int i)
@@ -22,6 +22,13 @@ int find_root(int n, int i)
 	}
 	return (find_root(n, i + 1));
 }
+
+/**
+ * _sqrt_recursion - calculates the natural square root of n.
+ * @n: base number.
+ *
+ * Return: -1 if !natural sqrt otherwise the sqrt.
+*/
 
 int _sqrt_recursion(int n)
 {
