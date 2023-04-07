@@ -27,11 +27,11 @@ int _checker(char *s, int i, int j)
 {
 	if (i >= j)
 		return (1);
-	
+
 	if (s[i] != s[j])
 		return (0);
 
-	return _checker(s, i + 1, j - 1);
+	return (_checker(s, i + 1, j - 1));
 }
 
 /**
