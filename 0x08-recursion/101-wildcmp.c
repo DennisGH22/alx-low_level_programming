@@ -2,7 +2,8 @@
 
 /**
  * wildcmp - Compares two strings.
- * @s: The compared strings.
+ * @s1: The compared string.
+ * @s2: The compared string.
  *
  * Return: 1 if true, otherwise 0.
 */
