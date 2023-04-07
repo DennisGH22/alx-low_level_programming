@@ -15,7 +15,7 @@ int find_root(int n, int i)
 	int err = (n > sqrt(n)),
 	square = i * i;
 
-	if (square == n && (n & (n - 1)) == 0)
+	if (square == n && n / i == i)
 	{
 		if (err)
 			return(-1);
