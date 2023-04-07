@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - Calculates the natural sqrt of n.
  * find_root - Compare index with the sqrt of num.
  * @n: The base num.
  * @i: The index num.
