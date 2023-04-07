@@ -10,7 +10,7 @@
  * Return: -1 if !natural sqr root otherwise the sqrt.
 */
 
-int find_root(int n, int i)
+void find_root(int n, int i)
 {
 	int err = (n > sqrt(n));
 
