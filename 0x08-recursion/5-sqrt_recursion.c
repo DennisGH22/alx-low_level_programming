@@ -23,6 +23,8 @@ int find_root(int n, int i)
 
 	if (i <= sqrt(n))
 		return (find_root(n, i + 1));
+	
+	return;
 }
 
 int _sqrt_recursion(int n)
