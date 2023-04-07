@@ -7,13 +7,9 @@
 
 void _print_rev_recursion(char *s)
 {
-	int length = strlen(*s);
-	if (length <= 1)
+	if (s[0] != '\0')
 	{
-		return;
+		_print_rev_recursion(s + 1);
+		_putchar(s[0]);
 	}
-	char temp = s[0];
-	s[0] = s[length - 1];
-	s[length - 1] = temp;
-	_print_rev_recursion(&s[1]);
 }
