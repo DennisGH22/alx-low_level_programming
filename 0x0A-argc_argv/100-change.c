@@ -11,10 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, amount, coins = 0;
-
-	int denominations[] = {25, 10, 5, 2, 1};
-	int num_denominations = sizeof(denominations) / sizeof(denominations[0]);
+	int amount, coins;
 
 	if (argc != 2)
 	{
@@ -23,11 +20,20 @@ int main(int argc, char *argv[])
 	}
 
 	amount = atoi(argv[1]);
+	coins = 0;
 
-	for (i = 0; i < num_denominations; i++)
+	while (amount > 0)
 	{
-		coins += amount / denominations[i];
-		amount = amount % denominations[i];
+		if (amount >= 25)
+			amount -= 25, coins++;
+		else if (amount >= 10)
+			amount -= 10, coins++;
+		else if (amount >= 5)
+			amount -= 5, coins++;
+		else if (amount >= 2)
+			amount -= 2, coins++;
+		else if (amount == 1)
+			amount -= 1, coins++;
 	}
 
 	printf("%d\n", coins);
