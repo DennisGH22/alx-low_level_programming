@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the number of arguments passed.
+ * main - Prints all arguments it receives.
  * @argc: The number of command-line arguments.
  * @argv: Array of pointers to the argument strings.
  *
