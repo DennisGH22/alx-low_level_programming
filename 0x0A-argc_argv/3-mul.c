@@ -12,32 +12,19 @@
 
 int main(int argc, char *argv[])
 {
-    int result = 1;
+	int num1, num2, result;
 
-    if (argc < 3)
-    {
-        printf("Error\n");
-        return (1);
-    }
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
-    for (int i = 1; i < argc; i++)
-    {
-        char *arg = argv[i];
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	result = num1 * num2;
 
-        while (*arg)
-        {
-            if (!isdigit(*arg) && *arg != '-')
-            {
-                printf("Error\n");
-                return (1);
-            }
-            arg++;
-        }
+	printf("%d\n", result);
 
-        int num = atoi(argv[i]);
-        result *= num;
-    }
-
-    printf("%d\n", result);
-    return (0);
+	return (0);
 }
