@@ -64,7 +64,6 @@ char **strtow(char *str)
 
 	num_words = get_word_count(str);
 	words = (char **)malloc((num_words + 1) * sizeof(char *));
-
 	if (words == NULL)
 		return (NULL);
 
@@ -91,9 +90,11 @@ char **strtow(char *str)
 				word_index++;
 			}
 		}
-		word_start++;
+		else
+		{
+			word_start++;
+		}
 	}
-
 	words[num_words] = NULL;
 	return (words);
 }
