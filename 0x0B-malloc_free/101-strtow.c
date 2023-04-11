@@ -61,11 +61,11 @@ char **strtow(char *str)
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
+
 	num_words = get_word_count(str);
 	words = (char **)malloc((num_words + 1) * sizeof(char *));
-	if (words == NULL)
+	if (words == NULL || num_words == 0)
 		return (NULL);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
