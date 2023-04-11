@@ -57,11 +57,7 @@ int get_word_length(char *str, int start_index)
 char **strtow(char *str)
 {
 	char **words;
-	int i, j,
-	num_words,
-	word_length = 0,
-	word_start = 0,
-	word_index = 0;
+	int i, j, num_words, word_length = 0, word_start = 0, word_index = 0;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -77,24 +73,18 @@ char **strtow(char *str)
 		if (str[i] != ' ')
 		{
 			word_length++;
-
 			if (str[i + 1] == ' ' || str[i + 1] == '\0')
 			{
 				words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
-
 				if (words[word_index] == NULL)
 				{
 					for (j = 0; j < word_index; j++)
 						free(words[j]);
-
 					free(words);
-
 					return (NULL);
 				}
-
 				for (j = 0; j < word_length; j++)
 					words[word_index][j] = str[word_start + j];
-
 				words[word_index][word_length] = '\0';
 				word_length = 0;
 				word_start = i + 1;
@@ -108,6 +98,5 @@ char **strtow(char *str)
 	}
 
 	words[num_words] = NULL;
-
 	return (words);
 }
