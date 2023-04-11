@@ -91,10 +91,7 @@ char **strtow(char *str)
 				word_index++;
 			}
 		}
-		else
-		{
-			word_start++;
-		}
+		word_start++;
 	}
 
 	words[num_words] = NULL;
