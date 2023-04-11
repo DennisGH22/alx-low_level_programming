@@ -36,8 +36,10 @@ char *argstostr(int ac, char **av)
 			result[j++] = av[i][k];
 
 		result[j++] = '\n';
-		result[len - 1] = '\0';
 	}
+
+	result[j++] = '\n';
+	result[len - 1] = '\0';
 
 	return (result);
 }
