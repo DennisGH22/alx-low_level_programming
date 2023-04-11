@@ -56,8 +56,7 @@ int get_word_length(char *str, int start_index)
 
 char **strtow(char *str)
 {
-	char **words;
-	int i, j, num_words, word_length = 0, word_start = 0, word_index = 0;
+	char **words; int i, j, num_words, word_length = 0, word_start = 0, word_index = 0;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
