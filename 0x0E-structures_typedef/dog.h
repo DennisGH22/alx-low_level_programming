@@ -7,11 +7,11 @@
  * Description: A dog with a name, age, and owner.
 */
 
-struct dog
+typedef struct dog
 {
 	char *name, *owner;
 	float age;
-};
+} dog_t;
 
 /* Functions Prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
