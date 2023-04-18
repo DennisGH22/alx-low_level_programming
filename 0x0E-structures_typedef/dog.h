@@ -7,7 +7,7 @@
  * Description: This struct represents a dog with a name, age, and owner.
 */
 
-typedef struct Dog
+typedef struct dog
 {
     char *name, *owner;
     float age;
