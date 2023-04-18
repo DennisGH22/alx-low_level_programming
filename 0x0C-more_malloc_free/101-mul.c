@@ -1,56 +1,70 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _isdigit(int c)
-{
-    return (c >= '0' && c <= '9');
-}
+/**
+ * is_all_digits - Checks if a string consists of only digits.
+ * @str: Pointer to the string to check.
+ *
+ * Return: 1 if the string contains non-digit characters, 0 otherwise.
+*/
 
-int _atoi(const char *s)
+int is_all_digits(char *str)
 {
-    int n = 0;
-    int sign = 1;
-
-    while (*s)
+    for (int i = 0; str[i] != '\0'; i++)
     {
-        if (*s == '-')
-            sign = -sign;
-        else if (_isdigit(*s))
-            n = n * 10 + (*s - '0');
-        else
-            return 0;
-        s++;
+        if (str[i] < '0' || str[i] > '9')
+        {
+            return (1);
+        }
     }
-    return sign * n;
+
+    return (0);
 }
 
-int multiply(int a, int b)
+/**
+ * _atoi - Converts a string of ASCII digits to an integer.
+ * @str: Pointer to the string to convert.
+ *
+ * Return: The integer value of the string.
+*/
+
+int _atoi(char *str)
 {
-    return a * b;
+    int result = 0;
+
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        result *= 10;
+        result += str[i] - '0';
+    }
+
+    return (result);
 }
 
 /**
  * main - Multiplies two positive numbers.
- * @argc: Argument.
- * @argv: Count.
+ * @argc: The number of arguments.
+ * @argv: An array of pointers to the arguments.
  *
- * Return: Always 0 (Success).
+ * Return: 0 on success, 98 on failure.
 */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-    int num1, num2;
-
     if (argc != 3)
     {
-        return 98;
+        printf("Error\n");
+        return (98);
     }
-    if (!_isdigit(*argv[1]) || !_isdigit(*argv[2]))
+
+    for (int i = 1; i < argc; i++)
     {
-        return 98;
+        if (is_all_digits(argv[i]))
+        {
+            printf("Error\n");
+            return (98);
+        }
     }
-    num1 = _atoi(argv[1]);
-    num2 = _atoi(argv[2]);
-    printf("%d\n", multiply(num1, num2));
-    return 0;
+
+    return (0);
 }
