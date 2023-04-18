@@ -6,6 +6,7 @@
  *
  * Description: This struct represents a dog with a name, age, and owner.
 */
+
 struct dog
 {
 	char *name;
