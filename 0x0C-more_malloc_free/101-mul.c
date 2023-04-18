@@ -10,7 +10,9 @@
 
 int is_all_digits(char *str)
 {
-    for (int i = 0; str[i] != '\0'; i++)
+	int i;
+
+    for (i = 0; str[i] != '\0'; i++)
     {
         if (str[i] < '0' || str[i] > '9')
         {
@@ -30,9 +32,9 @@ int is_all_digits(char *str)
 
 int _atoi(char *str)
 {
-    int result = 0;
+    int i, result;
 
-    for (int i = 0; str[i] != '\0'; i++)
+    for (i = 0; str[i] != '\0'; i++)
     {
         result *= 10;
         result += str[i] - '0';
@@ -51,13 +53,15 @@ int _atoi(char *str)
 
 int main(int argc, char *argv[])
 {
+	int i;
+
     if (argc != 3)
     {
         printf("Error\n");
         return (98);
     }
 
-    for (int i = 1; i < argc; i++)
+    for (i = 1; i < argc; i++)
     {
         if (is_all_digits(argv[i]))
         {
