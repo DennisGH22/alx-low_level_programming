@@ -43,12 +43,10 @@ int main(int argc, char **argv)
 
     if (argc != 3)
     {
-        printf("Error\n");
         return 98;
     }
     if (!_isdigit(*argv[1]) || !_isdigit(*argv[2]))
     {
-        printf("Error\n");
         return 98;
     }
     num1 = _atoi(argv[1]);
