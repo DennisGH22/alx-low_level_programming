@@ -32,7 +32,7 @@ int is_all_digits(char *str)
 
 int _atoi(char *str)
 {
-    int i, result;
+    int i, result = 0;
 
     for (i = 0; str[i] != '\0'; i++)
     {
