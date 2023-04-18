@@ -2,47 +2,65 @@
 #include <stdio.h>
 
 /**
-  * main - multiplies two positive numbers
-  * @argc: argument count
-  * @argv: array of arguments
-  * Return: 0 on success, 98 on failure
-  */
+ * _isdigit - tells if the string consists of digits
+ * @argv: pointer to current item in argument
+ * Return: return 0 if all digits, 1 if not all digits.
+ */
+int _isdigit(char *argv)
+{
+	int i;
+
+	for (i = 0; argv[i]; i++)
+	{
+		if (argv[i] < '0' || argv[i] > '9')
+			return (1);
+	}
+	return (0);
+}
+
+/**
+ * _atoi - converts a string of ascii digits to the values they represent
+ * @s: pointer to the source string
+ * Return: value of digits
+ */
+int _atoi(char *s)
+{
+	int i, result;
+
+	for (i = 0, result = 0; s[i]; i++)
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result *= 10;
+			result += (s[i] - '0');
+		}
+	}
+	return (result);
+}
+
+/**
+ * main - main function call
+ * @argc: argument count
+ * @argv: 2D array of arguments
+ * Return: return 0 on success, 98 on failure
+ */
 int main(int argc, char *argv[])
 {
-	int i, j, len1, len2;
-	unsigned long int res = 0;
+	int i;
 
+	malloc();
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
-
-	for (i = 1; i < 3; i++)
+	for (i = 1; i < argc; i++)
 	{
-		len1 = 0;
-		while (argv[i][len1])
+		if (_isdigit(argv[i]))
 		{
-			if (argv[i][len1] < '0' || argv[i][len1] > '9')
-			{
-				printf("Error\n");
-				return (98);
-			}
-			len1++;
-		}
-		len2 = 1;
-		for (j = 0; j < len1 - 1; j++)
-			len2 *= 10;
-		j = 0;
-		while (argv[i][j])
-		{
-			res += (argv[i][j] - '0') * len2;
-			len2 /= 10;
-			j++;
+			printf("Error\n");
+			exit(98);
 		}
 	}
-
-	printf("%lu\n", res);
-
 	return (0);
 }
