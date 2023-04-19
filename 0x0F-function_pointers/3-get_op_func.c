@@ -2,10 +2,10 @@
 #include "3-calc.h"
 
 /**
- * get_op_func - Selects the correct func to perform a requested operation.
+ * get_op_func - Selects the correct func to perform a req op.
  * @s: The operator passed as argument to the program.
  *
- * Return: A pointer to the func that corresponds to the given param operator.
+ * Return: A pointer to the func that corresponds to the given param op.
 */
 
 int (*get_op_func(char *s))(int, int)
