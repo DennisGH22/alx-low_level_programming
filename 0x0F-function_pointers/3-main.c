@@ -10,9 +10,10 @@
  * Return: Always 0 (Success).
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int num1, num2, result, (*op_func)(int, int);
+	int num1, num2, op_func;
+	char calc = argv[2][0];
 
 	if (argc != 4)
 	{
@@ -20,20 +21,27 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
-	op_func = get_op_func(argv[2]);
-
-	if (op_func == NULL || argv[2][1] != '\0')
+	if (calc != '+' && calc != '-' && calc != '/' && calc != '%'
+		&& calc != '*')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	result = op_func(num1, num2);
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-	printf("%d\n", result);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	printf("num1 = %d, num2 = %d\n", num1, num2);
+
+	op_func = get_op_func(argv[2])(num1, num2);
+
+	printf("%d\n", op_func);
 
 	return (0);
 }

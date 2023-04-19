@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
  * struct op - Struct op.
  * @op: The operator.
