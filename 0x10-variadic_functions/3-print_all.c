@@ -23,15 +23,12 @@ void print_all(const char * const format, ...)
 				c = (char) va_arg(args, int);
 				printf("%c", c);
 				break;
-
 			case 'i':
 				printf("%d", va_arg(args, int));
 				break;
-
 			case 'f':
 				printf("%f", (float) va_arg(args, double));
 				break;
-
 			case 's':
 				str = va_arg(args, char *);
 				if (str == NULL)
@@ -41,7 +38,6 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", str);
 				break;
-
 			default:
 				break;
 		}
@@ -49,10 +45,8 @@ void print_all(const char * const format, ...)
 		if (format[i + 1] && (format[i] == 'c' || format[i] == 'i' ||
 			format[i] == 'f' || format[i] == 's'))
 			printf(", ");
-
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
