@@ -29,8 +29,7 @@ void print_all(const char * const format, ...)
 				printf("%f", (float) va_arg(args, double));
 				break;
 			case 's':
-				str = va_arg(args, char *);
-				switch (str != NULL)
+				switch (va_arg(args, char *) != NULL)
 				{
 					case 1:
 						printf("%s", str);
