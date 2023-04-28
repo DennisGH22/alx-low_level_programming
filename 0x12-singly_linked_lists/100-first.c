@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * first - Print the provided string before the main function.
+ * first - Prints the string before the main function.
 */
 
 void __attribute__((constructor)) first(void)
