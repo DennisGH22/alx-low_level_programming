@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
- * first - Prints the string before the main function.
+ * first - Prints the provided string before the main function.
 */
 
 void __attribute__((constructor)) first(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
