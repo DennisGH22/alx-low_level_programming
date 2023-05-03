@@ -14,9 +14,7 @@ int sum_listint(listint_t *head)
 	listint_t *node;
 
 	for (node = head; node != NULL; node = node->next)
-	{
 		sum += node->n;
-	}
 
 	return (sum);
 }
