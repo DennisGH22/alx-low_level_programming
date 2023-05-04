@@ -10,11 +10,11 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *prev = NULL, *current;
+	listint_t *prev = NULL, *current, *next;
 
 	for (current = *head; current != NULL;)
 	{
-		listint_t *next = current->next;
+		next = current->next;
 		current->next = prev;
 		prev = current;
 		current = next;
