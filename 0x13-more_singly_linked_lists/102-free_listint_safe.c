@@ -11,24 +11,22 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-    size_t count = 0;
-	listint_t *tmp, *visited[1024];
+    size_t size = 0;
+	listint_t *current, *next;
 
-	if (h == NULL || *h == NULL)
-		return (count);
+	if (!h || !*h)
+		return (size);
 
-	while (*h != NULL)
+	for (current = *h; current; current = next)
 	{
-		tmp = *h;
-		*h = (*h)->next;
-		free(tmp);
-		count++;
+		next = current->next;
+		free(current);
+		size++;
 
-		if ((size_t)*h > 1023)
+		if (current <= next)
 			break;
-
-		visited[(size_t)*h] = *h;
 	}
 
-	return (count);
+	*h = NULL;
+	return (size);
 }
