@@ -11,19 +11,31 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-    size_t size = 0;
-    listint_t *current, *temp;
+    size_t count = 0;
+	hash_table_t *ht = NULL;
+	listint_t *node = *h, *tmp = NULL;
 
-    for (current = *h; current != NULL; size++)
-    {
-        temp = current;
-        current = current->next;
-        free(temp);
-        if (temp <= current)
-            break;
-    }
+	ht = hash_table_create(1024, NULL);
+	if (ht == NULL)
+		exit(98);
 
-    *h = NULL;
+	while (node != NULL)
+	{
+		if (hash_table_set(ht, node, ""))
+		{
+			tmp = node;
+			node = node->next;
+			free(tmp);
+			count++;
+		}
+		else
+		{
+			break;
+		}
+	}
 
-    return (size);
+	hash_table_delete(ht);
+	*h = NULL;
+
+	return (count);
 }
