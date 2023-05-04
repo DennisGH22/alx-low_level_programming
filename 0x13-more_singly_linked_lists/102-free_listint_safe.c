@@ -11,35 +11,35 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current_node, *runner_node, *start_node;
-	size_t head_index, runner_index;
+	listint_t *current, *runner, *head;
+	size_t current_index, runner_index;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	current_node = *h;
-	start_node = *h;
-	head_index = 0;
+	current = *h;
+	head = *h;
+	current_index = 0;
 
-	while (start_node != NULL)
+	while (head != NULL)
 	{
-		runner_node = *h;
-		for (runner_index = 0; runner_index < head_index; runner_index++)
+		runner = *h;
+		for (runner_index = 0; runner_index < current_index; runner_index++)
 		{
-			if (runner_node == current_node)
+			if (runner == current)
 			{
 				*h = NULL;
-				return (head_index);
+				return (current_index);
 			}
-			runner_node = runner_node->next;
+			runner = runner->next;
 		}
-		current_node = start_node->next;
-		free(start_node);
-		start_node = current_node;
-		head_index++;
+		current = head->next;
+		free(head);
+		head = current;
+		current_index++;
 	}
 
 	*h = NULL;
 
-	return (head_index);
+	return (current_index);
 }
