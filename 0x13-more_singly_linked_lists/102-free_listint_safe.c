@@ -12,30 +12,23 @@
 size_t free_listint_safe(listint_t **h)
 {
     size_t count = 0;
-	hash_table_t *ht = NULL;
-	listint_t *node = *h, *tmp = NULL;
+	listint_t *tmp, *visited[1024];
 
-	ht = hash_table_create(1024, NULL);
-	if (ht == NULL)
-		exit(98);
+	if (h == NULL || *h == NULL)
+		return (count);
 
-	while (node != NULL)
+	while (*h != NULL)
 	{
-		if (hash_table_set(ht, node, ""))
-		{
-			tmp = node;
-			node = node->next;
-			free(tmp);
-			count++;
-		}
-		else
-		{
-			break;
-		}
-	}
+		tmp = *h;
+		*h = (*h)->next;
+		free(tmp);
+		count++;
 
-	hash_table_delete(ht);
-	*h = NULL;
+		if ((size_t)*h > 1023)
+			break;
+
+		visited[(size_t)*h] = *h;
+	}
 
 	return (count);
 }
