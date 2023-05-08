@@ -4,7 +4,8 @@
 #include <fcntl.h>
 
 /**
- * read_textfile - Reads a text file and prints it to the POSIX standard output.
+ * read_textfile - Reads a text file and
+ * prints it to the POSIX standard output.
  * @filename: The name of the file read.
  * @letters: The letters in the file.
  *
