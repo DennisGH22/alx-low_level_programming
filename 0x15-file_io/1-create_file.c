@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 /**
- * create_file - Appends text at the end of a file.
+ * create_file - Creates a file.
  * @filename: The name of the file to create.
  * @text_content: The NULL terminated string to write to the file.
  *
