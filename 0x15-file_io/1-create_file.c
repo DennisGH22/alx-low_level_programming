@@ -6,7 +6,7 @@
 /**
  * create_file - Appends text at the end of a file.
  * @filename: The name of the file to create.
- * @text_content: The NULL terminated string to add at the end of the file.
+ * @text_content: The NULL terminated string to write to the file.
  *
  * Return: 1 on success, or -1 on failure.
 */
