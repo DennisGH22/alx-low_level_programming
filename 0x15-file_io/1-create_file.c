@@ -14,7 +14,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int file, len, bytes_written;
+	int file, w_len = 0;
 	mode_t mode = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)
@@ -26,22 +26,14 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		len = 0;
-		while (text_content[len])
-			len++;
+		while (text_content[w_len] != '\0')
+			w_len++;
 
-		bytes_written = write(file, text_content, len);
-		if (bytes_written == -1 || bytes_written != len)
+		if (write(file, text_content, w_len) != w_len)
 		{
 			close(file);
 			return (-1);
 		}
-	}
-
-	if (fchmod(file, mode) == -1)
-	{
-		close(file);
-		return (-1);
 	}
 
 	close(file);
