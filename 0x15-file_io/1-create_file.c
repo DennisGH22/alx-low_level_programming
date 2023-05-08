@@ -5,7 +5,7 @@
 
 /**
  * create_file - Appends text at the end of a file.
- * @filename: The name of the file.
+ * @filename: The name of the file to create.
  * @text_content: The NULL terminated string to add at the end of the file.
  *
  * Return: 1 on success, or -1 on failure.
@@ -25,8 +25,9 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len]; len++)
-			;
+		len = 0;
+		for (text_content[len])
+			len++;
 
 		bytes_written = write(file, text_content, len);
 		if (bytes_written == -1 || bytes_written != len)
