@@ -3,6 +3,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include "main.h"
 
 /**
  * create_file - Creates a file.
