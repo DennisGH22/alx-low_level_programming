@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     printf("  OS/ABI:                            %s\n", get_os_abi(header.e_ident[EI_OSABI]));
     printf("  ABI Version:                       %d\n", header.e_ident[EI_ABIVERSION]);
     printf("  Type:                              0x%x\n", header.e_type);
-    printf("  Entry point address:               0x%llu\n", header.e_entry);
+    printf("  Entry point address:               0x%lx\n", (unsigned long)header.e_entry);
     printf("\n");
 
     if (close(fd) == -1)
