@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 {
     int fd, i;
     ssize_t nread;
-    Elf64_Ehdr header;
+    Elf32_Ehdr header;
     char *filename = argv[1];
 
     if (argc != 2)
