@@ -22,4 +22,5 @@ void print_binary(unsigned long int n)
 
 	if (!flag)
 		printf("0");
+	printf("\n");
 }
