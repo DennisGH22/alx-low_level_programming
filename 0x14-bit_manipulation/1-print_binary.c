@@ -17,10 +17,9 @@ void print_binary(unsigned long int n)
 			flag = 1;
 
 		if (flag)
-			printf("%d", (n & mask) != 0);
+			putchar("0");
 	}
 
 	if (!flag)
-		printf("0");
-	printf("\n");
+		putchar("0");
 }
