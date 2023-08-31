@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *codex = "vYUKpxOB2QvKjNP1Dm2q24L_wluGfHB_sV9xPKV25sU!N$l&otaCPFWr9bkcj&ou";
-
 /**
  * main - Generates a password based on the username.
  * @argc: The number of command line arguments.
@@ -14,9 +12,10 @@ char *codex = "vYUKpxOB2QvKjNP1Dm2q24L_wluGfHB_sV9xPKV25sU!N$l&otaCPFWr9bkcj&ou"
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-    char *username = argv[1], password[7];
+	char *codex, *username = argv[1], password[7];
     int username_length = strlen(username), modifier, i;
 
+	codex = "vYUKpxOB2QvKjNP1Dm2q24L_wluGfHB_sV9xPKV25sU!N$l&otaCPFWr9bkcj&ou";
     modifier = (username_length ^ 59) & 63;
     password[0] = codex[modifier];
 
