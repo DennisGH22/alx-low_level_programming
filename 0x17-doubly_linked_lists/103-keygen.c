@@ -14,47 +14,43 @@ char *codex = "vYUKpxOB2QvKjNP1Dm2q24L_wluGfHB_sV9xPKV25sU!N$l&otaCPFWr9bkcj&ou"
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s username\n", argv[0]);
-        return (1);
-    }
+	int len = strlen(argv[1]);
+	int i, tmp;
+	char password[7];
 
-    char *username = argv[1], password[7];
-    int username_length = strlen(username), modifier, i;
+	tmp = (len ^ 59) & 63;
+	password[0] = codex[tmp];
 
-    modifier = (username_length ^ 59) & 63;
-    password[0] = codex[modifier];
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += argv[1][i];
+	password[1] = codex[(tmp ^ 79) & 63];
 
-    modifier = 0;
-    for (i = 0; i < username_length; i++)
-        modifier += username[i];
-    password[1] = codex[(modifier ^ 79) & 63];
+	tmp = 1;
+	for (i = 0; i < len; i++)
+		tmp *= argv[1][i];
+	password[2] = codex[(tmp ^ 85) & 63];
 
-    modifier = 1;
-    for (i = 0; i < username_length; i++)
-        modifier *= username[i];
-    password[2] = codex[(modifier ^ 85) & 63];
+	tmp = 0;
+	int max_char = argv[1][0];
+	for (i = 0; i < len; i++)
+	{
+		if (argv[1][i] > tmp)
+			tmp = argv[1][i];
+	}
+	srand(tmp ^ 14);
+	password[3] = codex[rand() & 63];
 
-    int first_char = username[0];
-    modifier = 0;
-    for (i = 0; i < username_length; i++)
-    {
-        if (username[i] > modifier)
-            modifier = username[i];
-    }
-    srand(first_char ^ 14);
-    password[3] = codex[rand() & 63];
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += (argv[1][i] * argv[1][i]);
+	password[4] = codex[(tmp ^ 239) & 63];
 
-    modifier = 0;
-    for (i = 0; i < username_length; i++)
-        modifier += (username[i] * username[i]);
-    password[4] = codex[(modifier ^ 239) & 63];
+	for (i = 0; i < max_char; i++)
+		tmp = rand();
+	password[5] = codex[(tmp ^ 229) & 63];
 
-    for (i = 0; i < first_char; i++)
-        modifier = rand();
-    password[5] = codex[(modifier ^ 229) & 63];
-
-    password[6] = '\0';
-    printf("%s\n", password);
-    return (0);
+	password[6] = '\0';
+	printf("%s\n", password);
+	return 0;
 }
