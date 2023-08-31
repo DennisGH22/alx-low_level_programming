@@ -31,7 +31,7 @@ unsigned char generatePasswordComponent(const char *str, int len, int modifier)
 int main(int argc, char *argv[]) {
 
 	const char *username = argv[1], *CODEx;
-    int usernameLength = strlen(username);
+    int i, usernameLength = strlen(username);
 
     unsigned char password[7], maxChar, firstComponent, secondComponent,
                   thirdComponent, fourthComponent, fifthComponent, sixthComponent;
@@ -42,19 +42,19 @@ int main(int argc, char *argv[]) {
     thirdComponent = generatePasswordComponent(CODEx, usernameLength, 85);
 
     maxChar = username[0];
-    for (int i = 0; i < usernameLength; i++)
+    for (i = 0; i < usernameLength; i++)
     {
         if (username[i] > maxChar)
             maxChar = username[i];
     }
 
-    srand((unsigned int)(time(NULL)));
-    
-    fourthComponent = CODEx[rand() & 63];
+    srand(maxChar ^ 14);
 
+    fourthComponent = CODEx[rand() & 63];
     fifthComponent = generatePasswordComponent(CODEx, usernameLength, 239);
 
-    srand((unsigned int)(time(NULL)));
+	for (i = 0; i < maxChar; i++)
+		rand();
     
     sixthComponent = generatePasswordComponent(CODEx, usernameLength, 229);
 
