@@ -13,8 +13,8 @@
 
 unsigned char generatePasswordComponent(const char *str, int len, int modifier)
 {
-	int result = 0;
-	for (int i = 0; i < len; i++)
+	int i, result = 0;
+	for (i = 0; i < len; i++)
 		result += str[i];
 
 	return str[(result ^ modifier) & 63];
