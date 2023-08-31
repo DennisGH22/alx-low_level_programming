@@ -31,38 +31,40 @@ unsigned char generatePasswordComponent(const char *str, int len, int modifier)
 int main(int argc, char *argv[]) {
 
 	const char *username = argv[1], *CODEx;
-	int usernameLength = strlen(username);
+    int usernameLength = strlen(username);
 
-	unsigned char password[7], maxChar, firstComponent, secondComponent,
-	thirdComponent, fourthComponent, fifthComponent, sixthComponent;
+    unsigned char password[7], maxChar, firstComponent, secondComponent,
+                  thirdComponent, fourthComponent, fifthComponent, sixthComponent;
 
-	CODEx = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-	firstComponent = generatePasswordComponent(CODEx, usernameLength, 59);
-	secondComponent = generatePasswordComponent(CODEx, usernameLength, 79);
-	thirdComponent = generatePasswordComponent(CODEx, usernameLength, 85);
+    CODEx = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+    firstComponent = generatePasswordComponent(CODEx, usernameLength, 59);
+    secondComponent = generatePasswordComponent(CODEx, usernameLength, 79);
+    thirdComponent = generatePasswordComponent(CODEx, usernameLength, 85);
 
-	maxChar = username[0];
-	for (int i = 0; i < usernameLength; i++)
-	{
-		if (username[i] > maxChar)
-			maxChar = username[i];
-	}
-	srand(maxChar ^ 14);
-	fourthComponent = CODEx[rand() & 63];
+    maxChar = username[0];
+    for (int i = 0; i < usernameLength; i++)
+    {
+        if (username[i] > maxChar)
+            maxChar = username[i];
+    }
 
-	fifthComponent = generatePasswordComponent(CODEx, usernameLength, 239);
+    srand((unsigned int)(time(NULL)));
+    
+    fourthComponent = CODEx[rand() & 63];
 
-	for (int i = 0; i < maxChar; i++)
-		rand();
-	sixthComponent = generatePasswordComponent(CODEx, usernameLength, 229);
+    fifthComponent = generatePasswordComponent(CODEx, usernameLength, 239);
 
-	password[0] = firstComponent;
-	password[1] = secondComponent;
-	password[2] = thirdComponent;
-	password[3] = fourthComponent;
-	password[4] = fifthComponent;
-	password[5] = sixthComponent;
-	password[6] = '\0';
+    srand((unsigned int)(time(NULL)));
+    
+    sixthComponent = generatePasswordComponent(CODEx, usernameLength, 229);
+
+    password[0] = firstComponent;
+    password[1] = secondComponent;
+    password[2] = thirdComponent;
+    password[3] = fourthComponent;
+    password[4] = fifthComponent;
+    password[5] = sixthComponent;
+    password[6] = '\0';
 
 	printf("%s\n", password);
 	return (0);
