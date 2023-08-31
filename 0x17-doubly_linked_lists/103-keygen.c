@@ -2,52 +2,74 @@
 #include <stdlib.h>
 #include <string.h>
 
+const char *CODEx = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+
 /**
- * main - Generates and prints passwords for the crackme5 executable.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * generatePasswordComponent - Generates a password component using a modifier.
+ * @str: The character set for password generation.
+ * @len: The length of the input string.
+ * @modifier: The modifier for transforming the password component.
  *
- * Return: Always 0.
- */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+ * Return: The generated password component.
+*/
+
+unsigned char generatePasswordComponent(const char *str, int len, int modifier)
 {
-	char password[7], *codex;
-	int len = strlen(argv[1]), i, tmp;
+	int result = 0;
+	for (int i = 0; i < len; i++)
+		result += str[i];
 
-	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	return str[(result ^ modifier) & 63];
+}
 
-	tmp = (len ^ 59) & 63;
-	password[0] = codex[tmp];
+/**
+ * main - Generates a password based on the username.
+ * @argc: The number of command line arguments.
+ * @argv: An array containing the command line arguments.
+ *
+ * Return: Always 0 (Success).
+*/
 
-	tmp = 0;
-	for (i = 0; i < len; i++)
-		tmp += argv[1][i];
-	password[1] = codex[(tmp ^ 79) & 63];
-
-	tmp = 1;
-	for (i = 0; i < len; i++)
-		tmp *= argv[1][i];
-	password[2] = codex[(tmp ^ 85) & 63];
-
-	tmp = 0;
-	for (i = 0; i < len; i++)
+int main(int argc, char *argv[]) {
+	if (argc != 2)
 	{
-		if (argv[1][i] > tmp)
-			tmp = argv[1][i];
+		fprintf(stderr, "Usage: %s username\n", argv[0]);
+		return (1);
 	}
-	srand(tmp ^ 14);
-	password[3] = codex[rand() & 63];
 
-	tmp = 0;
-	for (i = 0; i < len; i++)
-		tmp += (argv[1][i] * argv[1][i]);
-	password[4] = codex[(tmp ^ 239) & 63];
+	const char *username = argv[1];
+	int usernameLength = strlen(username);
 
-	for (i = 0; i < argv[1][0]; i++)
-		tmp = rand();
-	password[5] = codex[(tmp ^ 229) & 63];
+	unsigned char password[7], maxChar, firstComponent, secondComponent,
+	thirdComponent, fourthComponent, fifthComponent, sixthComponent;
 
+	firstComponent = generatePasswordComponent(CODEx, usernameLength, 59);
+	secondComponent = generatePasswordComponent(CODEx, usernameLength, 79);
+	thirdComponent = generatePasswordComponent(CODEx, usernameLength, 85);
+
+	maxChar = username[0];
+	for (int i = 0; i < usernameLength; i++)
+	{
+		if (username[i] > maxChar)
+			maxChar = username[i];
+	}
+	srand(maxChar ^ 14);
+	fourthComponent = CODEx[rand() & 63];
+
+	fifthComponent = generatePasswordComponent(CODEx, usernameLength, 239);
+
+	for (int i = 0; i < maxChar; i++)
+		rand();
+	sixthComponent = generatePasswordComponent(CODEx, usernameLength, 229);
+
+	password[0] = firstComponent;
+	password[1] = secondComponent;
+	password[2] = thirdComponent;
+	password[3] = fourthComponent;
+	password[4] = fifthComponent;
+	password[5] = sixthComponent;
 	password[6] = '\0';
-	printf("%s", password);
+
+	printf("%s\n", password);
 	return (0);
 }
