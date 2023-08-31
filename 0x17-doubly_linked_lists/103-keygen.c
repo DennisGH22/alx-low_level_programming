@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char *CODEx = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-
 /**
  * generatePasswordComponent - Generates a password component using a modifier.
  * @str: The character set for password generation.
@@ -31,18 +29,14 @@ unsigned char generatePasswordComponent(const char *str, int len, int modifier)
 */
 
 int main(int argc, char *argv[]) {
-	if (argc != 2)
-	{
-		fprintf(stderr, "Usage: %s username\n", argv[0]);
-		return (1);
-	}
 
-	const char *username = argv[1];
+	const char *username = argv[1], *CODEx;
 	int usernameLength = strlen(username);
 
 	unsigned char password[7], maxChar, firstComponent, secondComponent,
 	thirdComponent, fourthComponent, fifthComponent, sixthComponent;
 
+	CODEx = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	firstComponent = generatePasswordComponent(CODEx, usernameLength, 59);
 	secondComponent = generatePasswordComponent(CODEx, usernameLength, 79);
 	thirdComponent = generatePasswordComponent(CODEx, usernameLength, 85);
