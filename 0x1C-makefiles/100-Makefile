@@ -25,4 +25,4 @@ fclean: clean oclean
 
 re: oclean all
 
-$(OBJ) m.h
+m.h $(OBJ)
