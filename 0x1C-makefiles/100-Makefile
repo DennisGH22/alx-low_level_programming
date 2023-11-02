@@ -10,7 +10,7 @@ NAME = school
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
 
 clean:
