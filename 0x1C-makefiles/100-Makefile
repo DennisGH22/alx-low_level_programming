@@ -12,7 +12,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(NAME): m.h $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
@@ -24,3 +24,5 @@ oclean:
 fclean: clean oclean
 
 re: oclean all
+
+$(OBJ) m.h
