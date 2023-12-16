@@ -10,6 +10,7 @@
  *
  * Return: The first index where value is located, or -1 if not found
 */
+
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i = 0;
@@ -17,7 +18,7 @@ int linear_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	for (i = 0; i < size; ++i)
+	for (i = 0; i < size; i++)
 	{
 		printf("Comparing %d with %d\n", array[i], value);
 
